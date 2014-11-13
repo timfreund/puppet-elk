@@ -49,10 +49,6 @@ class elk {
     ensure => running,
   }
 
-  service {'logstash':
-    ensure => running,
-  }
-
   File['/etc/elasticsearch/elasticsearch.yml'] -> Service['elasticsearch']
   Package['openjdk-7-jre-headless'] -> Package['logstash']
   Package['openjdk-7-jre-headless'] -> Package['elasticsearch']
