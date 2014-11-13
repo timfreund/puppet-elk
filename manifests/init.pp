@@ -47,6 +47,7 @@ class elk {
 
   service {'elasticsearch':
     ensure => running,
+    enable => true,
   }
 
   File['/etc/elasticsearch/elasticsearch.yml'] -> Service['elasticsearch']
